@@ -1,7 +1,7 @@
 function addLinksNext(json, option) {
 
     json.results.forEach(function (result) {
-        $('.content').append(`<div><a href="#" link="${result.url}">${result[option].replace('http:', 'https:')}</a></div>`);
+        $('.content').append(`<div><a href="#" link="${result.url.replace('http:', 'https:')}">${result[option]}</a></div>`);
     });
     if (json.next) {
         addLinks(json.next.replace('http:', 'https:'), option);
