@@ -16,7 +16,7 @@ function addLinksNext(json, option) {
 function addLinks(link, option) {
 
     $.ajax({
-        url: link,
+        url: link.replace('http:', 'https:'),
         type: 'GET',
         async: true,
         success: function (response) {
@@ -59,7 +59,7 @@ function sort() {
 function addInformation(link) {
     $('.content').css('column-count', '1');
     $.ajax({
-        url: link,
+        url: link.replace('http:', 'https:'),
         type: 'GET',
         async: true,
         success: function (response) {
@@ -72,7 +72,7 @@ function addInformation(link) {
                             response[parameter].forEach(function (arrayPart) {
                                 if (arrayPart.substr(0, 4) === 'http') {
                                     let resp = JSON.parse($.ajax({
-                                        url: arrayPart,
+                                        url: arrayPart.replace('http:', 'https:'),
                                         async: false,
                                         type: 'GET',
 
@@ -92,7 +92,7 @@ function addInformation(link) {
                     } else {
                         if (response[parameter].substr(0, 4) === 'http') {
                             let resp = JSON.parse($.ajax({
-                                url: response[parameter],
+                                url: response[parameter].replace('http:', 'https:'),
                                 async: false,
                                 type: 'GET',
 
