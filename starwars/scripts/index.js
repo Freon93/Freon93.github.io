@@ -4,7 +4,7 @@ function addLinksNext(json, option) {
         $('.content').append(`<div><a href="#" link="${result.url}">${result[option].replace('http:', 'https:')}</a></div>`);
     });
     if (json.next) {
-        addLinks(json.next, option);
+        addLinks(json.next.replace('http:', 'https:'), option);
     } else {
 
         sort();
