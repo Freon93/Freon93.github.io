@@ -1,7 +1,7 @@
 function addLinksNext(json, option) {
 
     json.results.forEach(function (result) {
-        $('.content').append(`<div><a href="#" link="${result.url}">${result[option]}</a></div>`);
+        $('.content').append(`<div><a href="#" link="${result.url}">${result[option].replace('http:', 'https:')}</a></div>`);
     });
     if (json.next) {
         addLinks(json.next, option);
@@ -82,7 +82,7 @@ function addInformation(link) {
                                         name = resp[prop];
                                         break;
                                     }
-                                    $('.content div').last().append(`<a href="#" link="${arrayPart}">${name}</a>; `);
+                                    $('.content div').last().append(`<a href="#" link="${arrayPart.replace('http:', 'https:')}">${name}</a>; `);
                                 } else {
                                     $('.content div').last().append(`${arrayPart}; `);
                                 }
@@ -103,7 +103,7 @@ function addInformation(link) {
                                 break;
                             }
 
-                            $('.content').append(`<div>${parameter}: <a href="#" link="${response[parameter]}">${name}</a></div>`);
+                            $('.content').append(`<div>${parameter}: <a href="#" link="${response[parameter].replace('http:', 'https:')}">${name}</a></div>`);
                         } else {
                             $('.content').append(`<div>${parameter}: ${response[parameter]}</div>`);
                         }
