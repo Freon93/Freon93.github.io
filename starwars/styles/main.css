@@ -1,0 +1,24 @@
+.content {
+    column-count: 3;
+    min-height: 80px;
+}
+
+.nav a {
+    color: #f8f9fa;
+}
+
+.nav a:hover {
+    color: #f8f9fa;
+}
+
+.spinner {
+    position: absolute;
+    top: 128px;
+    left: 45%;
+    z-index: 1;
+    width: 20px;
+}
+
+.spinner img {
+    width: 50px;
+}
